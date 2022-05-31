@@ -1,3 +1,11 @@
+import process from "process";
+
 export const parseEnv = () => {
-    // Write your code here 
+  for (const entry of Object.entries(process.env)) {
+    if (entry[0].match(/^RSS_/)) {
+      console.log(entry.join("="));
+    }
+  }
 };
+
+parseEnv();

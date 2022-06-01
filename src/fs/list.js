@@ -1,5 +1,8 @@
 import fs from "fs/promises";
 import path from "path";
+import url from "url";
+
+const dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 export const list = async (pathToFolder) => {
   try {
@@ -12,4 +15,4 @@ export const list = async (pathToFolder) => {
   }
 };
 
-list(path.resolve("files"));
+list(path.join(dirname, "files"));

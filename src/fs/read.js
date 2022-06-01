@@ -1,5 +1,8 @@
 import fs from "fs/promises";
 import path from "path";
+import url from "url";
+
+const dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 export const read = async (fileToRead) => {
   try {
@@ -10,4 +13,4 @@ export const read = async (fileToRead) => {
   }
 };
 
-read(path.resolve("files", "fileToRead.txt"));
+read(path.join(dirname, "files", "fileToRead.txt"));

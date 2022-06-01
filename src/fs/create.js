@@ -1,5 +1,8 @@
 import fs from "fs/promises";
 import path from "path";
+import url from "url";
+
+const dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 export const create = async (path, text) => {
   try {
@@ -9,4 +12,4 @@ export const create = async (path, text) => {
   }
 };
 
-create(path.resolve("files", "fresh.txt"), "I am fresh and young");
+create(path.join(dirname, "files", "fresh.txt"), "I am fresh and young");

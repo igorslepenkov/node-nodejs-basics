@@ -1,5 +1,8 @@
 import fs from "fs/promises";
 import path from "path";
+import url from "url";
+
+const dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 export const remove = async (pathToFile) => {
   try {
@@ -9,4 +12,4 @@ export const remove = async (pathToFile) => {
   }
 };
 
-remove(path.resolve("files", "fileToRemove_copy.txt"));
+remove(path.join(dirname, "files", "fileToRemove_copy.txt"));

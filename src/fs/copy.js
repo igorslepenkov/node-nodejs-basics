@@ -27,7 +27,6 @@ export const copy = async (srcPath, destPath) => {
       fs.copyFile(srcPath, destPath, constants.COPYFILE_EXCL);
     }
   } catch (err) {
-    console.log(err);
     throw new Error("FS operation failed");
   }
 };

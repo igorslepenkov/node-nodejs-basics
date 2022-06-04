@@ -9,4 +9,4 @@ export const read = async (pathToFile) => {
   rs.pipe(process.stdout);
 };
 
-read(path.resolve(dirname, "files", "fileToRead.txt"));
+read(path.join(dirname, "files", "fileToRead.txt"));

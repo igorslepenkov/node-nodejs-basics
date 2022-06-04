@@ -10,8 +10,8 @@ export const write = async (pathToFile) => {
   process.stdin.pipe(ws);
 
   process.stdin.on("data", (data) => {
-    if (data.toString().includes("--close--")) {
-      process.stdin.push(null);
+    if (data.toString().includes("CLOSE")) {
+      process.exit();
     }
   });
 };

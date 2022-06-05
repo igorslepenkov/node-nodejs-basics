@@ -28,4 +28,4 @@ export const performCalculations = async () => {
   return res;
 };
 
-performCalculations().then((data) => console.log(data));
+performCalculations().then((res) => console.log(res));

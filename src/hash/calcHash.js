@@ -7,8 +7,8 @@ const dirname = path.dirname(url.fileURLToPath(import.meta.url));
 export const calculateHash = async () => {
   const hash = createHash("sha256");
   hash.update(path.join(dirname, "files", "fileToCalculateHashFor.txt"));
-  const hashResult = hash.digest("hex");
-  console.log(hashResult);
+  const hex = hash.digest("hex");
+  return hex;
 };
 
-calculateHash();
+calculateHash().then((hex) => console.log(hex));

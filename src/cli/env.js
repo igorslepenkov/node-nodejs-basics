@@ -1,4 +1,4 @@
-import process from "process";
+process.env["RSS_TEST"] = "test";
 
 export const parseEnv = () => {
   for (const entry of Object.entries(process.env)) {

@@ -12,4 +12,4 @@ export const remove = async (pathToFile) => {
   }
 };
 
-remove(path.join(dirname, "files", "fileToRemove_copy.txt"));
+remove(path.join(dirname, "files", "fileToRemove.txt"));
